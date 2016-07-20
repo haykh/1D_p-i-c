@@ -41,6 +41,7 @@ This class contains the info about particles.
 - `particle.x` and `particle.v`: [accepts `float`] logical position and velocity of the particle
 - `particle.qm`: [accepts `float`] charge/mass ratio for the particle
 - `particle.q`: particle charge determined by the equation 
+    
     ```python
     self.q = omega_p**2 * (1 / qm) * eps_0 * (L / N)
     ```
