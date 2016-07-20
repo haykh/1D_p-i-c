@@ -36,5 +36,16 @@ numpy.sum(density(particles)[:-1])
 
 Particles can be movable, i.e., `particle.mv = True`, or permanently nailed in place, `particle.mv = False`. 
 
+### `Particle` class
+This class contains the info about particles.
+- `particle.x` and `particle.v`: [accepts `float`] logical position and velocity of the particle
+- `particle.qm`: [accepts `float`] charge/mass ratio for the particle
+- `particle.q`: particle charge determined by the equation
+
+![equation](http://bit.ly/2a8AvbC)
+
+- `particle.mv`: [accepts `bool`] the particle is either movable or not
+
+
 ## Further reading
 [Plasma physics via computer simulation](https://www.amazon.com/Plasma-Physics-via-Computer-Simulation/dp/0750310251) by C.K. Birdsall and A.B Langdon

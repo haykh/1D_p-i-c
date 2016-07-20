@@ -113,10 +113,10 @@ def rewind (direction, field, parts):
     for k in range(NPart):
         # updating velocity
         if parts[k].mv:
-            parts[k].v += direction * field[k] * QoverM * dT / 2.0
+            parts[k].v += direction * field[k] * parts[k].qm * dT / 2.0
     return parts
 
-# Interpolating field from nodes to particles
+# Particles' EOM integration
 #   ACCEPTS field [on particles] array & particles
 #   RETURNS particles [new positions and velocities] array
 def moveParticles (field, parts):
@@ -124,7 +124,7 @@ def moveParticles (field, parts):
     for k in range(NP):
         if parts[k].mv:
             # updating velocity
-            parts[k].v += field[k] * QoverM * dT
+            parts[k].v += field[k] * parts[k].qm * dT
 
             # updating position
             parts[k].x += parts[k].v * dT

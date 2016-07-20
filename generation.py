@@ -2,10 +2,11 @@ from parameters import *
 import numpy as np
 
 class Particle:
-    def __init__(self, pos, vel, charge, move):
+    def __init__(self, pos, vel, omegaP, QoverM, move):
         self.x = pos
         self.v = vel
-        self.q = charge
+        self.q = omegaP**2 * (1 / QoverM) * eps0 * (SIZE / NP)
+        self.qm = QoverM
         self.mv = move
 
 def twoStream1 ():
@@ -32,13 +33,13 @@ def twoStream1 ():
             x2 -= SIZE
 
         # add to PARTS
-        PARTS.append(Particle (x1, -1.0, Q, True))
-        PARTS.append(Particle (x2, 1.0, Q, True))
+        PARTS.append(Particle (x1, -1.0, 1.0, -1.0, True))
+        PARTS.append(Particle (x2, 1.0, 1.0, -1.0, True))
 
     sep = SIZE / NP
     for i in range (NP):
         x0 = (i + 0.5) * sep
-        PARTS.append(Particle (x0, 0.0, -Q, False))
+        PARTS.append(Particle (x0, 0.0, 1.0, 1.0, False))
 
     return PARTS
 
@@ -46,28 +47,28 @@ def twoStream2 ():
     PARTS = []
     for i in range(NP / 2):
         x = np.random.uniform(0, SIZE)
-        PARTS.append(Particle (x, 1.0, Q, True))
+        PARTS.append(Particle (x, 1.0, 1.0, -1.0, True))
         x = np.random.uniform(0, SIZE)
-        PARTS.append(Particle (x, -1.0, Q, True))
+        PARTS.append(Particle (x, -1.0, 1.0, -1.0, True))
     for i in range(NP):
         x = np.random.uniform(0, SIZE)
-        PARTS.append(Particle (x, 0.0, -Q, False))
+        PARTS.append(Particle (x, 0.0, 1.0, -1.0, False))
     return PARTS
 
 def fourStream ():
     PARTS = []
     for i in range(NP / 4):
         x = np.random.uniform(0, SIZE)
-        PARTS.append(Particle (x, 0.5, Q, True))
+        PARTS.append(Particle (x, 0.5, 1.0, -1.0, True))
         x = np.random.uniform(0, SIZE)
-        PARTS.append(Particle (x, -0.5, Q, True))
+        PARTS.append(Particle (x, -0.5, 1.0, -1.0, True))
         x = np.random.uniform(0, SIZE)
-        PARTS.append(Particle (x, -1.5, Q, True))
+        PARTS.append(Particle (x, -1.5, 1.0, -1.0, True))
         x = np.random.uniform(0, SIZE)
-        PARTS.append(Particle (x, 1.5, Q, True))
+        PARTS.append(Particle (x, 1.5, 1.0, -1.0, True))
     for i in range(NP):
         x = np.random.uniform(0, SIZE)
-        PARTS.append(Particle (x, 0.0, -Q, False))
+        PARTS.append(Particle (x, 0.0, 1.0, 1.0, False))
     return PARTS
 
 def plasmaFluc ():
@@ -85,9 +86,9 @@ def plasmaFluc ():
             x0 += SIZE
         if x0 >= SIZE:
             x0 -= SIZE
-        PARTS.append(Particle (x0, 0.0, Q, True))
+        PARTS.append(Particle (x0, 0.0, 1.0, -1.0, True))
 
     for i in range(NP):
         x0 = (i + 0.5) * sep
-        PARTS.append(Particle (x0, 0.0, -Q, False))
+        PARTS.append(Particle (x0, 0.0, 1.0, 1.0, False))
     return PARTS
