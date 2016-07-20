@@ -44,7 +44,6 @@ def twoStream1 ():
 
 def twoStream2 ():
     PARTS = []
-    # specie 1
     for i in range(NP / 2):
         x = np.random.uniform(0, SIZE)
         PARTS.append(Particle (x, 1.0, Q, True))
@@ -91,16 +90,4 @@ def plasmaFluc ():
     for i in range(NP):
         x0 = (i + 0.5) * sep
         PARTS.append(Particle (x0, 0.0, -Q, False))
-    return PARTS
-
-def ionScreen ():
-    PARTS = []
-    for i in range(NP + 100):
-        x = np.random.uniform(0, SIZE)
-        PARTS.append(Particle (x, 0.0, Q, True))
-    sep = 1.0 * SIZE / NP
-    for i in range(NP):
-        x0 = np.random.uniform(0, SIZE)
-        PARTS.append(Particle (x0, 0.0, -Q, False))
-    PARTS.append(Particle (SIZE / 2.0, 0.0, -100 * Q, False))
     return PARTS

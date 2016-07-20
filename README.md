@@ -11,16 +11,24 @@
 - `helpers.py` - progress-bar and timing functions
 
 ## Simulation
-The program can be started by calling `python main.py`. Make sure to modify paths and plasma generation function:
+The program can be started by calling `python main.py`. Make sure to modify output paths in `main.py` and input in `parameters.py`:
 ```python
-particles = gen.NAME_FROM_GENERATION_PY()
+NAME = ‘input_value_name’
 ```
+
+This `NAME` determines what primary configuration is used:
+- `’plasma_fluc’` - simple plasma fluctuations
+- `’two-stream’` - two-stream instability (uniform distribution)
+- `’two-stream_r’` - two-stream instability (random distribution)
+- `’four-stream’` - "four-stream" instability (kind of)
 
 ## Plotting
 To simply view the animation comment out `anim.save(…)` leaving `plt.show()`. To save the animation, make sure to put `ffmpeg` codecs from [here](http://www.ffmpegmac.net/) to your `/usr/local/bin/` directory (necessary for OS X).
 
 ## Experimenting with various inputs
-Feel free to create your own plasma generation functions. The only thing you need to keep in mind, is to keep the overall number density 0. You can check that by doing
+Feel free to create your own plasma generation functions. Add the `NAME` parameter for it in `parameters.py` and add the `elif` case in `main.py`. 
+
+The only thing you need to keep in mind, is to keep the overall charge density neutral. You can check that by doing
 ```python
 numpy.sum(density(particles)[:-1])
 ```

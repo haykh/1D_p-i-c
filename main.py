@@ -5,7 +5,14 @@ import generation as gen
 from cycle import *
 import helpers as hlp
 
-particles = gen.fourStream()
+if NAME == 'plasma_fluc':
+    particles = gen.plasmaFluc()
+elif NAME == 'two-stream':
+    particles = gen.twoStream1()
+elif NAME == 'two-stream_r':
+    particles = gen.twoStream2()
+elif NAME == 'four-stream':
+    particles = gen.fourStream()
 
 # PROGRESS BAR
 stp = 0
