@@ -17,10 +17,10 @@ NAME = ‘input_value_name’
 ```
 
 This `NAME` determines what primary configuration is used:
-- `’plasma_fluc’` - simple plasma fluctuations
-- `’two-stream’` - two-stream instability (uniform distribution)
-- `’two-stream_r’` - two-stream instability (random distribution)
-- `’four-stream’` - "four-stream" instability (kind of)
+- `’plasma_fluc’` - simple plasma fluctuations (see [video](https://www.youtube.com/watch?v=CRl_Q-YGAiU))
+- `’two-stream’` - two-stream instability (uniform distribution) (see [video](https://www.youtube.com/watch?v=HylkN0Ygl1E))
+- `’two-stream_r’` - two-stream instability (random distribution) (see [video](https://www.youtube.com/watch?v=C5kP_TZ3IHY))
+- `’four-stream’` - "four-stream" instability (kind of) (see [video](https://www.youtube.com/watch?v=xZGo-IZY8LU))
 
 ## Plotting
 To simply view the animation comment out `anim.save(…)` leaving `plt.show()`. To save the animation, make sure to put `ffmpeg` codecs from [here](http://www.ffmpegmac.net/) to your `/usr/local/bin/` directory (necessary for OS X).
