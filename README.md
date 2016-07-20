@@ -44,9 +44,9 @@ This class contains the info about particles.
 ```python
 self.q = omega_p**2 * (1 / qm) * eps_0 * (L / N)
 ```
-	- `omega_p` is the given plasma frequency
-	- `eps_0` is the vacuum permittivity (set to be 1)
-	- `L / N` is the number density of particle specie
+ - `omega_p` is the given plasma frequency
+ - `eps_0` is the vacuum permittivity (set to be 1)
+ - `L / N` is the number density of particle specie
 - `particle.mv`: [accepts `bool`] the particle is either movable or not
 
 
