@@ -40,10 +40,13 @@ Particles can be movable, i.e., `particle.mv = True`, or permanently nailed in p
 This class contains the info about particles.
 - `particle.x` and `particle.v`: [accepts `float`] logical position and velocity of the particle
 - `particle.qm`: [accepts `float`] charge/mass ratio for the particle
-- `particle.q`: particle charge determined by the equation
-
-![equation](http://bit.ly/2a8AvbC)
-
+- `particle.q`: particle charge determined by the equation 
+```python
+self.q = omega_p**2 * (1 / qm) * eps_0 * (L / N)
+```
+	- `omega_p` is the given plasma frequency
+	- `eps_0` is the vacuum permittivity (set to be 1)
+	- `L / N` is the number density of particle specie
 - `particle.mv`: [accepts `bool`] the particle is either movable or not
 
 
