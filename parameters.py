@@ -1,10 +1,10 @@
 # NODES
-CELLS = 50              # number of cells
+CELLS = 100             # number of cells
 NODES = CELLS + 1       # number of node points
 
 SIZE = 20.0             # size of the system
 
-STEPS = 100
+STEPS = 2000
 
 # This NAME determines what primary configuration is used
 #   'plasma_fluc' - simple plasma fluctuations
@@ -12,7 +12,7 @@ STEPS = 100
 #   'two-stream_r' - two-stream instability (random distribution)
 #   'four-stream' - "four-stream" instability (kind of)
 # feel free to create your own & add case in `main.py`
-NAME = 'plasma_fluc'
+NAME = 'beam_instability'
 dX = SIZE / CELLS       # distance between nodes (spatial step)
 dT = 0.1                # timestep (should be: omegaP * dt < 0.3)
 

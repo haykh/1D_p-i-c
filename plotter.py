@@ -28,7 +28,7 @@ def animate(i):
 anim = animation.FuncAnimation(fig, animate, init_func=init,
                                frames=STEPS, interval=1, blit=False)
 
-# writer = animation.writers['ffmpeg'](fps=60)
-# anim.save('results/' + NAME + '.mp4', writer = writer, dpi = 150)
+writer = animation.writers['ffmpeg'](fps=60)
+anim.save('results/' + NAME + '.mp4', writer = writer, dpi = 150)
 
-plt.show()
+# plt.show()

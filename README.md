@@ -21,9 +21,10 @@ This `NAME` determines what primary configuration is used:
 - `’two-stream’` - two-stream instability (uniform distribution) (see [video](https://www.youtube.com/watch?v=HylkN0Ygl1E))
 - `’two-stream_r’` - two-stream instability (random distribution) (see [video](https://www.youtube.com/watch?v=C5kP_TZ3IHY))
 - `’four-stream’` - "four-stream" instability (kind of) (see [video](https://www.youtube.com/watch?v=xZGo-IZY8LU))
+- `’beam_instability’` - beam instability (see [video](https://youtu.be/omAHGhcDOwI))
 
 ## Plotting
-To simply view the animation comment out `anim.save(…)` leaving `plt.show()`. To save the animation, make sure to put `ffmpeg` codecs from [here](http://www.ffmpegmac.net/) to your `/usr/local/bin/` directory (necessary for OS X).
+Plotter works distinctly by calling `python plotter.py`. To simply view the animation comment out `anim.save(…)` leaving `plt.show()`. To save the animation, make sure to put `ffmpeg` codecs from [here](http://www.ffmpegmac.net/) to your `/usr/local/bin/` directory (necessary for OS X).
 
 ## Experimenting with various inputs
 Feel free to create your own plasma generation functions. Add the `NAME` parameter for it in `parameters.py` and add the `elif` case in `main.py`. 
@@ -37,7 +38,16 @@ numpy.sum(density(particles)[:-1])
 Particles can be movable, i.e., `particle.mv = True`, or permanently nailed in place, `particle.mv = False`. 
 
 ### `Particle` class
-This class contains the info about particles.
+This class contains the info about particles. 
+
+It accepts: 
+- `pos`: position
+- `vel`: velocity
+- `omegaP`: plasma frequency
+- `QoverM`: charge-to-mass ratio
+- `move`: `True` if particle is movable, `False` if it’s not
+
+It contains:
 - `particle.x` and `particle.v`: [accepts `float`] logical position and velocity of the particle
 - `particle.qm`: [accepts `float`] charge/mass ratio for the particle
 - `particle.q`: particle charge determined by the equation 

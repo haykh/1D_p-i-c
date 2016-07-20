@@ -35,7 +35,7 @@ def density (parts):
     return rho
 
 # import generation as gen
-# particles1 = gen.fourStream()
+# particles1 = gen.beamInstability()
 # # particles2 = gen.twoStream1()
 # print np.sum(density(particles1)[:-1])
 
@@ -55,6 +55,8 @@ def SOR (rho):
 
     # solver
     for k in range(10000):
+        if k == 9999:
+            print '\nSOR (likely) diverges\n'
         phinew = np.copy(phi)
         for i in range(NODES - 1):
             nxt = (i + 1) if (i < NODES - 2) else 0
@@ -121,7 +123,7 @@ def rewind (direction, field, parts):
 #   RETURNS particles [new positions and velocities] array
 def moveParticles (field, parts):
     NPart = len(parts)
-    for k in range(NP):
+    for k in range(NPart):
         if parts[k].mv:
             # updating velocity
             parts[k].v += field[k] * parts[k].qm * dT

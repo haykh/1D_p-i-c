@@ -13,6 +13,8 @@ elif NAME == 'two-stream_r':
     particles = gen.twoStream2()
 elif NAME == 'four-stream':
     particles = gen.fourStream()
+elif NAME == 'beam_instability':
+    particles = gen.beamInstability()
 
 # PROGRESS BAR
 stp = 0
