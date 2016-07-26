@@ -61,5 +61,5 @@ It contains:
 - `particle.mv`: [accepts `bool`] the particle is either movable or not
 
 ## Further reading
-- C.K. Birdsall & A.B. Langdon, 1991, Plasma Physics via Computer Simulation, The Adam Hilger Series on Plasma Physics, edited by C. Birdsall & A. Langdon. Adam Hilger, Bristol, England [(ISBN: 0-07-005371-5)](https://www.amazon.com/Plasma-Physics-via-Computer-Simulation/dp/0750310251)
-- R.W. Hockney & Eastwood J.W., 1988, Computer Simulation Using Particles, Bristol: Hilger [(ISBN: 978-0852743928)](https://www.amazon.com/Computer-Simulation-Using-Particles-Hockney/dp/0852743920)
+- Birdsall, C. K., & Langdon, A. B., **1991**, *Plasma Physics via Computer Simulation*, The Adam Hilger Series on Plasma Physics, edited by C. Birdsall & A. Langdon. Adam Hilger, Bristol, England [(ISBN: 0-07-005371-5)](https://www.amazon.com/Plasma-Physics-via-Computer-Simulation/dp/0750310251)
+- R.W. Hockney & Eastwood J.W., **1988**, *Computer Simulation Using Particles*, Bristol: Hilger [(ISBN: 978-0852743928)](https://www.amazon.com/Computer-Simulation-Using-Particles-Hockney/dp/0852743920)
